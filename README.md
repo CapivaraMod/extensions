@@ -1,4 +1,4 @@
-# TurboWarp Extension Gallery
+# CapivaraMod Extension Gallery
 
 User-contributed unsandboxed extension gallery for TurboWarp.
 
