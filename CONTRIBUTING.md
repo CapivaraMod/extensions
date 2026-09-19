@@ -23,7 +23,7 @@ Like any tool, AI has good uses and bad uses. Follow these guidelines to avoid w
 
 These categories of extensions are **highly discouraged**:
 
- - Broad "Utilities" extensions. Break them up into multiple extensions instead. See https://github.com/CapivaraMod/extensions/issues/674 for discussion.
+ - Broad "Utilities" extensions. Break them up into multiple extensions instead. See https://github.com/TurboWarp/extensions/issues/674 for discussion.
  - Extensions that are very similar to existing ones. Consider modifying the existing extension instead.
  - Very niche extensions. You can write the extension for yourself, then import it as a file instead without needing us to review.
  - Extensions whose primary purpose is monetization. It isn't in the spirit of a free and open source project.
@@ -33,7 +33,7 @@ Some extensions were added before these guidelines existed. We're trying to enfo
 
 ## Security
 
-TurboWarp's threat model is that loading a project in the editor should be no more dangerous than opening a PowerPoint. Projects can't affect anything outside of the editor without consent from the user. We offer a [bug bounty](https://github.com/CapivaraMod/extensions/security/policy) to people who find and report security bugs in merged extensions. Most guardrails can disappear once the project is packaged.
+TurboWarp's threat model is that loading a project in the editor should be no more dangerous than opening a PowerPoint. Projects can't affect anything outside of the editor without consent from the user. We offer a [bug bounty](https://github.com/TurboWarp/extensions/security/policy) to people who find and report security bugs in merged extensions. Most guardrails can disappear once the project is packaged.
 
 Evaluating project-supplied JavaScript using `eval()`, `new Function()`, or other methods is not allowed.
 

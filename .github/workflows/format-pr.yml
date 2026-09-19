@@ -7,7 +7,7 @@ on:
 permissions: {}
 
 jobs:
-  # This is complicated because the action runs in the context of CapivaraMod/extensions, but we
+  # This is complicated because the action runs in the context of TurboWarp/extensions, but we
   # are processing content from a possibly malicious pull request. To keep this safe, we break
   # this into two stages.
 
