@@ -19,13 +19,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TurboWarp/extensions.git"
+    "url": "git+https://github.com/CapivaraMod/extensions.git"
   },
   "license": "MIT AND LGPL-3.0-only AND GPL-3.0-only AND CC-BY-SA-4.0 AND CC-BY-4.0 AND CC-BY-2.5 AND CC0-1.0 AND Apache-2.0 AND MPL-2.0 AND BSD-3-Clause AND ISC",
   "bugs": {
-    "url": "https://github.com/TurboWarp/extensions/issues"
+    "url": "https://github.com/CapivaraMod/extensions/issues"
   },
-  "homepage": "https://github.com/TurboWarp/extensions#readme",
+  "homepage": "https://github.com/CapivaraMod/extensions#readme",
   "dependencies": {
     "@turbowarp/json": "^0.1.2",
     "@turbowarp/scratchblocks": "^3.6.7",
