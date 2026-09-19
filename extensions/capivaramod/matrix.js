@@ -60,8 +60,8 @@
         let total = 0;
         for (let dy = 0; dy < size; dy += 2) {
           for (let dx = 0; dx < size; dx += 2) {
-            const x = c * size + dx;
-            const y = r * size + dy;
+            const x = Math.min(width - 1, c * size + dx);
+            const y = Math.min(height - 1, r * size + dy);
             total++;
             if (data[(y * width + x) * 4 + 3] > 100) hits++;
           }
@@ -77,6 +77,7 @@
     if (!effect) return;
     effect.active = false;
     cancelAnimationFrame(effect.frame);
+    if (effect.cleanup) effect.cleanup();
     const renderer = runtime.renderer;
     if (renderer && effect.skinId !== null) {
       renderer.destroySkin(effect.skinId);
@@ -100,10 +101,10 @@
     if (!renderer || !target || target.drawableID === undefined) return;
     stopEffect(target.id);
 
-    width = clamp(Math.round(width), 32, 1920);
-    height = clamp(Math.round(height), 32, 1080);
-    size = clamp(Math.round(size), 6, 96);
-    speed = clamp(speed, 0.1, 10);
+    width = clamp(Math.round(width) || 480, 32, 1920);
+    height = clamp(Math.round(height) || 360, 32, 1080);
+    size = clamp(Math.round(size) || 14, 6, 96);
+    speed = clamp(speed || 1, 0.1, 10);
 
     const built = buildMask(text, width, height, size);
     const cols = built.cols;
@@ -198,20 +199,39 @@
 
     const loop = (now) => {
       if (!effect.active) return;
-      accumulator += now - last;
+      // Se o alvo foi apagado, encerra o efeito
+      if (!runtime.getTargetById(target.id)) {
+        stopEffect(target.id);
+        return;
+      }
+      // Limita o tempo decorrido: ao voltar de outra aba o delta seria enorme
+      // e o efeito rodaria acelerado tentando "recuperar" o tempo perdido.
+      const delta = Math.min(now - last, 100);
       last = now;
+      accumulator += delta;
       let guard = 0;
       while (accumulator >= 33 && guard < 4) {
         step();
         accumulator -= 33;
         guard++;
       }
-      if (guard === 0 && accumulator > 1000) accumulator = 0;
+      // Descarta o atraso que sobrar em vez de acumular
+      if (accumulator >= 33) accumulator = 0;
       draw();
       renderer.updateBitmapSkin(skinId, canvas, 1, [width / 2, height / 2]);
       runtime.requestRedraw();
       effect.frame = requestAnimationFrame(loop);
     };
+
+    // Ao voltar para a aba, zera o relógio para não haver salto
+    const onVisibility = () => {
+      if (!document.hidden) {
+        last = performance.now();
+        accumulator = 0;
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    effect.cleanup = () => document.removeEventListener('visibilitychange', onVisibility);
 
     effect.frame = requestAnimationFrame(loop);
   };
@@ -219,7 +239,7 @@
   class MatrixExtension {
     getInfo() {
       return {
-        id: 'matrixtextfx',
+        id: 'matrix',
         name: 'Matrix',
         color1: '#003b12',
         blocks: [
@@ -253,11 +273,6 @@
             opcode: 'stopAll',
             blockType: Scratch.BlockType.COMMAND,
             text: 'parar todos os efeitos matrix'
-          },
-          {
-            opcode: 'isActive',
-            blockType: Scratch.BlockType.BOOLEAN,
-            text: 'matrix ativo?'
           }
         ]
       };
@@ -278,7 +293,7 @@
 
     setSpeed(args, util) {
       const effect = effects.get(util.target.id);
-      if (effect) effect.speed = clamp(Scratch.Cast.toNumber(args.SPEED), 0.1, 10);
+      if (effect) effect.speed = clamp(Scratch.Cast.toNumber(args.SPEED) || 1, 0.1, 10);
     }
 
     stop(args, util) {
@@ -287,10 +302,6 @@
 
     stopAll() {
       stopAll();
-    }
-
-    isActive(args, util) {
-      return effects.has(util.target.id);
     }
   }
 
