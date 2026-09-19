@@ -13,7 +13,7 @@ jobs:
 
     # This workflow is not useful to forks without setting up Transifex and modifying the
     # workflow to use your organization, project, resources, API token, ...
-    if: ${{ github.repository == 'TurboWarp/extensions' && github.ref == 'refs/heads/master' }}
+    if: ${{ github.repository == 'CapivaraMod/extensions' && github.ref == 'refs/heads/master' }}
 
     steps:
       - name: Checkout

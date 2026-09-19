@@ -27,7 +27,7 @@ jobs:
       - name: Checkout upstream
         uses: actions/checkout@v7
         with:
-          repository: TurboWarp/extensions
+          repository: CapivaraMod/extensions
           persist-credentials: false
       - name: Checkout pull request
         run: gh pr checkout "$PR_NUM"
@@ -62,7 +62,7 @@ jobs:
       - name: Checkout upstream
         uses: actions/checkout@v7
         with:
-          repository: TurboWarp/extensions
+          repository: CapivaraMod/extensions
           # Can't use the default workflow token because commits made by it won't cause more
           # workflows to run, so any commits it pushes get stuck in limbo waiting for workflows
           # to run that will never run.
