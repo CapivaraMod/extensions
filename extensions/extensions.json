@@ -1,5 +1,6 @@
 [
   // This file supports comments
   "capivaramod/matrix",
-  "capivaramod/minecraftskin"
+  "capivaramod/minecraftskin",
+  "capivaramod/abreviadornumerico"
 ]
