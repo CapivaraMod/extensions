@@ -2,5 +2,7 @@
   // This file supports comments
   "capivaramod/matrix",
   "capivaramod/minecraftskin",
-  "capivaramod/abreviadornumerico"
+  "capivaramod/abreviadornumerico",
+  "capivaramod/colors",
+  "capivaramod/vector"
 ]
