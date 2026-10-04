@@ -8,5 +8,6 @@
   "capivaramod/movimentacaoextra",
   "capivaramod/poligonos",
   "capivaramod/tempo",
-  "capivaramod/starwarsapi"
+  "capivaramod/starwarsapi",
+  "capivaramod/capturadetela"
 ]
