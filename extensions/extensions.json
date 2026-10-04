@@ -5,5 +5,7 @@
   "capivaramod/abreviadornumerico",
   "capivaramod/colors",
   "capivaramod/vector",
-  "capivaramod/movimentacaoextra"
+  "capivaramod/movimentacaoextra",
+  "capivaramod/poligonos",
+  "capivaramod/tempo"
 ]
