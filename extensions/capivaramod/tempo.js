@@ -1,5 +1,5 @@
-// Name: Time
-// ID: Time
+// Name: Capivara Mod Time
+// ID: capivaramodtime
 // Description: adds new blocks for calculating time and viewing the time.
 // By: CapivaraMod
 // License: MIT AND LGPL-3.0
