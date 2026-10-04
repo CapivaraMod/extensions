@@ -7,5 +7,6 @@
   "capivaramod/vector",
   "capivaramod/movimentacaoextra",
   "capivaramod/poligonos",
-  "capivaramod/tempo"
+  "capivaramod/tempo",
+  "capivaramod/starwarsapi"
 ]
