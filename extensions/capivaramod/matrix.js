@@ -8,7 +8,7 @@
   'use strict';
 
   if (!Scratch.extensions.unsandboxed) {
-    throw new Error('A extensão Matrix precisa rodar fora da sandbox');
+    throw new Error('This extension needs to be unsandboxed to run!');
   }
 
   const runtime = Scratch.vm.runtime;

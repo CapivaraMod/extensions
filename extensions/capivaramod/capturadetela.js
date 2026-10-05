@@ -9,7 +9,7 @@
     'use strict';
 
     if (!Scratch.extensions.unsandboxed) {
-        throw new Error('A extensão "Captura de Tela" precisa ser carregada sem sandbox (unsandboxed).');
+        throw new Error('This extension needs to be unsandboxed to run!');
     }
 
     const vm = Scratch.vm;

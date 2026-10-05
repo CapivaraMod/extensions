@@ -10,7 +10,7 @@
     // 67
 
     if (!Scratch.extensions.unsandboxed) {
-        alert('Esta extensão precisa ser carregada em modo unsandboxed!');
+        alert('This extension needs to be unsandboxed to run!');
         return;
     }
 

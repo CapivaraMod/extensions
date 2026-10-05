@@ -9,5 +9,6 @@
   "capivaramod/poligonos",
   "capivaramod/tempo",
   "capivaramod/starwarsapi",
-  "capivaramod/capturadetela"
+  "capivaramod/capturadetela",
+  "capivaramod/navegador"
 ]
