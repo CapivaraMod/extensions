@@ -12,5 +12,6 @@
   "capivaramod/capturadetela",
   "capivaramod/navegador",
   "capivaramod/morsecode",
-  "capivaramod/textcomparison"
+  "capivaramod/textcomparison",
+  "capivaramod/morsecodesong"
 ]
