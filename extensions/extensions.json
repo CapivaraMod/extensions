@@ -10,5 +10,7 @@
   "capivaramod/tempo",
   "capivaramod/starwarsapi",
   "capivaramod/capturadetela",
-  "capivaramod/navegador"
+  "capivaramod/navegador",
+  "capivaramod/morsecode",
+  "capivaramod/textcomparison"
 ]
