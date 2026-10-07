@@ -1,5 +1,5 @@
-// Name: Morse Code Song
-// ID: morsecodesong
+// Name: Morse Code Sound
+// ID: morsecodesound
 // Description: play Morse code sounds.
 // By: CapivaraMod
 // License: MIT AND LGPL-3.0
