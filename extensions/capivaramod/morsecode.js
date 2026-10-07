@@ -2,7 +2,7 @@
 // ID: morsecode
 // Description: Original created by https://github.com/Flappy25.
 // By: Flappy25 (original version), Modified by CapivaraMod
-// License: MIT AND LGPL-3.0
+// License: none
 
 class MorseCodeTranslator {
     constructor() {
