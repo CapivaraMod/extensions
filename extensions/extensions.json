@@ -14,5 +14,6 @@
   "capivaramod/aparenciaextra",
   "capivaramod/morsecode",
   "capivaramod/textcomparison",
-  "capivaramod/morsecodesong"
+  "capivaramod/morsecodesong",
+  "capivaramod/capivaramodutilities"
 ]
