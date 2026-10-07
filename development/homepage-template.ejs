@@ -113,6 +113,11 @@
         margin: 4px;
         overflow: hidden;
         padding: 8px;
+        transition: all 0.15s;
+      }
+      .extension:hover, .extension:focus-within {
+        transform: scale(1.01);
+        border: 2px dotted #6B8E23;
       }
       @media (prefers-color-scheme: dark) {
         .extension {
@@ -155,7 +160,8 @@
       }
       .extension:hover .extension-buttons, .extension:focus-within .extension-buttons {
         opacity: 1;
-        backdrop-filter: blur(0.6px);
+        backdrop-filter: blur(5px);
+        transition: all 0.15s;
       }
       .extension-buttons > * {
         background-color: #4c97ff;
